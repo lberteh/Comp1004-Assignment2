@@ -16,5 +16,11 @@ namespace Assignment2
         {
             InitializeComponent();
         }
+
+        // Closes application
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -246,7 +246,7 @@
             this.AdditionalItemsGroupBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdditionalItemsGroupBox.Location = new System.Drawing.Point(371, 39);
             this.AdditionalItemsGroupBox.Name = "AdditionalItemsGroupBox";
-            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(221, 137);
+            this.AdditionalItemsGroupBox.Size = new System.Drawing.Size(291, 137);
             this.AdditionalItemsGroupBox.TabIndex = 2;
             this.AdditionalItemsGroupBox.TabStop = false;
             this.AdditionalItemsGroupBox.Text = "Additional Items";
@@ -257,9 +257,9 @@
             this.StereoSystemCheckBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StereoSystemCheckBox.Location = new System.Drawing.Point(22, 30);
             this.StereoSystemCheckBox.Name = "StereoSystemCheckBox";
-            this.StereoSystemCheckBox.Size = new System.Drawing.Size(132, 22);
+            this.StereoSystemCheckBox.Size = new System.Drawing.Size(211, 22);
             this.StereoSystemCheckBox.TabIndex = 0;
-            this.StereoSystemCheckBox.Text = "Stereo System";
+            this.StereoSystemCheckBox.Text = "Stereo System ($200.00)";
             this.StereoSystemCheckBox.UseVisualStyleBackColor = true;
             // 
             // LeatherInteriorCheckBox
@@ -268,9 +268,9 @@
             this.LeatherInteriorCheckBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LeatherInteriorCheckBox.Location = new System.Drawing.Point(22, 62);
             this.LeatherInteriorCheckBox.Name = "LeatherInteriorCheckBox";
-            this.LeatherInteriorCheckBox.Size = new System.Drawing.Size(140, 22);
+            this.LeatherInteriorCheckBox.Size = new System.Drawing.Size(219, 22);
             this.LeatherInteriorCheckBox.TabIndex = 1;
-            this.LeatherInteriorCheckBox.Text = "Leather Interior";
+            this.LeatherInteriorCheckBox.Text = "Leather Interior ($800.00)";
             this.LeatherInteriorCheckBox.UseVisualStyleBackColor = true;
             // 
             // ComputerNavigationCheckBox
@@ -279,9 +279,9 @@
             this.ComputerNavigationCheckBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComputerNavigationCheckBox.Location = new System.Drawing.Point(22, 92);
             this.ComputerNavigationCheckBox.Name = "ComputerNavigationCheckBox";
-            this.ComputerNavigationCheckBox.Size = new System.Drawing.Size(188, 22);
+            this.ComputerNavigationCheckBox.Size = new System.Drawing.Size(267, 22);
             this.ComputerNavigationCheckBox.TabIndex = 2;
-            this.ComputerNavigationCheckBox.Text = "Computer Navigation";
+            this.ComputerNavigationCheckBox.Text = "Computer Navigation ($550.00)";
             this.ComputerNavigationCheckBox.UseVisualStyleBackColor = true;
             // 
             // ExteriorFinishGroupBox
@@ -292,7 +292,7 @@
             this.ExteriorFinishGroupBox.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ExteriorFinishGroupBox.Location = new System.Drawing.Point(371, 199);
             this.ExteriorFinishGroupBox.Name = "ExteriorFinishGroupBox";
-            this.ExteriorFinishGroupBox.Size = new System.Drawing.Size(221, 137);
+            this.ExteriorFinishGroupBox.Size = new System.Drawing.Size(291, 137);
             this.ExteriorFinishGroupBox.TabIndex = 3;
             this.ExteriorFinishGroupBox.TabStop = false;
             this.ExteriorFinishGroupBox.Text = "Exterior Finish";
@@ -300,6 +300,7 @@
             // StandardFinishRadioButton
             // 
             this.StandardFinishRadioButton.AutoSize = true;
+            this.StandardFinishRadioButton.Checked = true;
             this.StandardFinishRadioButton.Location = new System.Drawing.Point(22, 30);
             this.StandardFinishRadioButton.Name = "StandardFinishRadioButton";
             this.StandardFinishRadioButton.Size = new System.Drawing.Size(94, 22);
@@ -313,10 +314,9 @@
             this.PearlizedFinishRadioButton.AutoSize = true;
             this.PearlizedFinishRadioButton.Location = new System.Drawing.Point(22, 62);
             this.PearlizedFinishRadioButton.Name = "PearlizedFinishRadioButton";
-            this.PearlizedFinishRadioButton.Size = new System.Drawing.Size(97, 22);
+            this.PearlizedFinishRadioButton.Size = new System.Drawing.Size(191, 22);
             this.PearlizedFinishRadioButton.TabIndex = 1;
-            this.PearlizedFinishRadioButton.TabStop = true;
-            this.PearlizedFinishRadioButton.Text = "Pearlized";
+            this.PearlizedFinishRadioButton.Text = "Pearlized (+ $350.00)";
             this.PearlizedFinishRadioButton.UseVisualStyleBackColor = true;
             // 
             // CustomFinishRadioButton
@@ -324,10 +324,9 @@
             this.CustomFinishRadioButton.AutoSize = true;
             this.CustomFinishRadioButton.Location = new System.Drawing.Point(22, 94);
             this.CustomFinishRadioButton.Name = "CustomFinishRadioButton";
-            this.CustomFinishRadioButton.Size = new System.Drawing.Size(82, 22);
+            this.CustomFinishRadioButton.Size = new System.Drawing.Size(176, 22);
             this.CustomFinishRadioButton.TabIndex = 2;
-            this.CustomFinishRadioButton.TabStop = true;
-            this.CustomFinishRadioButton.Text = "Custom";
+            this.CustomFinishRadioButton.Text = "Custom (+ $700.00)";
             this.CustomFinishRadioButton.UseVisualStyleBackColor = true;
             // 
             // CalculateButton
@@ -353,12 +352,13 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(508, 342);
+            this.ExitButton.Location = new System.Drawing.Point(578, 342);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(84, 47);
             this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // menuStrip1
             // 
@@ -368,7 +368,7 @@
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(598, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(671, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -457,7 +457,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(598, 396);
+            this.ClientSize = new System.Drawing.Size(671, 396);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.CalculateButton);
