@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditionalItem.cs" />
     <Compile Include="SharpAutoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +67,8 @@
     <EmbeddedResource Include="SharpAutoForm.resx">
       <DependentUpon>SharpAutoForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
