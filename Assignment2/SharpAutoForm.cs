@@ -22,6 +22,7 @@ namespace Assignment2
     public partial class SharpAutoForm : Form
     {
 
+
         List<Double> additionalItems = new List<Double>();
         double exteriorFinish = 0;
         double additionalOptionsTotal;
@@ -147,7 +148,13 @@ namespace Assignment2
                     MessageBox.Show("Negative values are not allowed! \nPlease, try again.");
                     tBox.Focus();
                     tBox.SelectAll();
-                }                    
+                }          
+                if (basePrice > 10000000)
+                {
+                    MessageBox.Show("Não trolla");
+                    tBox.Focus();
+                    tBox.SelectAll();
+                }          
             }
         }
 
@@ -261,16 +268,33 @@ namespace Assignment2
 
         // Changes Font
         private void Edit_FontToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            BasePriceTextBox.Font = new Font("Arial", 18);
-            AmountDueTextBox.Font = new Font("Arial", 18);
+        {           
+            // Show the font dialog
+            DialogResult result = fontDialog1.ShowDialog();
+            // See if OK was pressed.
+            if (result == DialogResult.OK)
+            {
+                // Get Font.
+                Font font = fontDialog1.Font;
+                // Set TextBox properties               
+                BasePriceTextBox.Font = font;               
+                AmountDueTextBox.Font = font;
+            }
         }
 
         // Changes Color 
         private void Edit_ColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BasePriceTextBox.ForeColor = System.Drawing.ColorTranslator.FromHtml("#03A9F4");
-            AmountDueTextBox.ForeColor = System.Drawing.ColorTranslator.FromHtml("#03A9F4");
+            // Show the color dialog.
+            DialogResult result = colorDialog1.ShowDialog();
+            // See if user pressed ok.
+            if (result == DialogResult.OK)
+            {
+                // Set form background to the selected color.
+                BasePriceTextBox.ForeColor = colorDialog1.Color;
+                AmountDueTextBox.BackColor = AmountDueTextBox.BackColor; // for some weird reason, if I don't "tickle" the backcolor first, forecolor won't apply to read only textboxes using colorDialog 
+                AmountDueTextBox.ForeColor = colorDialog1.Color;
+            }
         }
 
         // Displays message box with app info

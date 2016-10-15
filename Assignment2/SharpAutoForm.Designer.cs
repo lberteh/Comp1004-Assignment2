@@ -65,6 +65,8 @@
             this.Edit_ColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Help_AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.LabelsPanel.SuspendLayout();
             this.TextBoxesPanel.SuspendLayout();
             this.AdditionalItemsGroupBox.SuspendLayout();
@@ -377,7 +379,7 @@
             // CalculateButton
             // 
             this.CalculateButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CalculateButton.Location = new System.Drawing.Point(20, 474);
+            this.CalculateButton.Location = new System.Drawing.Point(14, 474);
             this.CalculateButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.CalculateButton.Name = "CalculateButton";
             this.CalculateButton.Size = new System.Drawing.Size(287, 65);
@@ -389,7 +391,7 @@
             // ClearButton
             // 
             this.ClearButton.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClearButton.Location = new System.Drawing.Point(317, 474);
+            this.ClearButton.Location = new System.Drawing.Point(311, 474);
             this.ClearButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(140, 65);
@@ -585,6 +587,8 @@
         private System.Windows.Forms.ToolStripMenuItem Edit_ColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Help_AboutToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
