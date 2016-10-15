@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * App: Sharp Auto
+ * Author: Lucas Schoenardie
+ * Student ID: 200322197
+ * Created on: 14/10/2016
+ * Description: This program calculates the amount due on a New or Used Vehicle
+ *              after including Taxes and discounting Trade-in Allowance.           
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +18,7 @@ namespace Assignment2
     public static class Program
     {
         public static AdditionalItem additionalItem;
-        public static Value value;
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,8 +26,7 @@ namespace Assignment2
         public static void Main()
         {
             // instantiate an Additionaltem object to make use through my whole application
-            additionalItem = new AdditionalItem();
-            value = new Assignment2.Value();
+            additionalItem = new AdditionalItem();            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

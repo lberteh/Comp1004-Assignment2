@@ -262,8 +262,6 @@
             this.BasePriceTextBox.Size = new System.Drawing.Size(193, 40);
             this.BasePriceTextBox.TabIndex = 0;
             this.BasePriceTextBox.Text = "$0.00";
-            this.BasePriceTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
-            this.BasePriceTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox_KeyPress);
             this.BasePriceTextBox.Leave += new System.EventHandler(this.TextBox_Leave);
             // 
             // AdditionalItemsGroupBox

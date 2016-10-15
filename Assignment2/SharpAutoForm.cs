@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * App: Sharp Auto
+ * Author: Lucas Schoenardie
+ * Student ID: 200322197
+ * Created on: 14/10/2016
+ * Description: This program calculates the amount due on a New or Used Vehicle
+ *              after including Taxes and discounting Trade-in Allowance.           
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +21,7 @@ namespace Assignment2
 {
     public partial class SharpAutoForm : Form
     {
+
         List<Double> additionalItems = new List<Double>();
         double exteriorFinish = 0;
         double additionalOptionsTotal;
@@ -25,31 +35,35 @@ namespace Assignment2
             InitializeComponent();
         }
 
-
+        // This method adds and removes items to/from the additionalItems List
         private void AdditionalItems_CheckedChanged(object sender, EventArgs e)
         {
+            // declaring CheckBox type variable and initializing with sender object
             CheckBox cBox = (CheckBox)sender;
-            string property = (string)cBox.Tag;
-            double itemPrice = Convert.ToDouble(Program.additionalItem[property].ToString());
 
+            string property = (string)cBox.Tag; // casts checkBox Tag property value as a string
+            // sets itemPrice value acording to corresponding checkBox property from the AdditionalItem class
+            double itemPrice = Convert.ToDouble(Program.additionalItem[property].ToString()); 
+
+            // add to list
             if (cBox.Checked == true)
             {
                 additionalItems.Add(itemPrice);
             }
+            // remove from list
             else
             {
                 additionalItems.Remove(itemPrice);
             }
 
-
-            setTotalPrice();
+            setAdditionalsTotalPrice(); // method call
 
         }
 
-
+        // This method updates additionalTotalPrice value;
         private void ExteriorFinishRadioButtons_CheckedChanged(object sender, EventArgs e)
         {
-
+            // declaring RadioButton type variable and initializing with sender object
             RadioButton rButton = (RadioButton)sender;
 
             // set exteriorFinish value based on user selection
@@ -65,63 +79,46 @@ namespace Assignment2
             {
                 exteriorFinish = 700;
             }
-
-            //set totalPrice and display it in AdditionalOptionsTextBox
-            setTotalPrice();
+            
+            setAdditionalsTotalPrice(); // method call
         }
 
-        
-        private void setTotalPrice()
+        // This method sets additionalTotalPrice and displays it in AdditionalOptionsTextBox
+        private void setAdditionalsTotalPrice()
         {
             additionalOptionsTotal = additionalItems.Sum() + exteriorFinish;
             AdditionalOptionsTextBox.Text = additionalOptionsTotal.ToString("C2");
         }
 
-        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-            //    (e.KeyChar != '.'))
-            //{
-            //    e.Handled = true;
-            //}
-
-            //// only allow one decimal point
-            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            //{
-            //    e.Handled = true;
-            //}
-        }
-
-        private void TextBox_TextChanged(object sender, EventArgs e)
-        {
-            TextBox tBox = (TextBox)sender;
-            
-        }
-
+        // This method validates user input
         private void TextBox_Leave(object sender, EventArgs e)
         {
+            // declaring TextBox type variable and initializing with sender object
             TextBox tBox = (TextBox)sender;
+            // method scope variables
             string tempString;
 
             try
             {
+                // if user inserted value starting "$", remove the "$"
                 if(tBox.Text.Trim().Substring(0,1) == "$")
                 {
                     tempString = tBox.Text.Substring(1);
+                    // sets basePrice variable value and corresponding textBox text
                     if (tBox.Name == "BasePriceTextBox")
                     {
-                        basePrice = Convert.ToDouble(tempString);                        
+                        basePrice = Convert.ToDouble(tempString);                    
                         tBox.Text = basePrice.ToString("C2");                            
                     }
                     else if (tBox.Name == "TradeInAllowanceTextBox")
                     {
-                        tradeIn = Convert.ToDouble(tempString);
+                        tradeIn = Convert.ToDouble(tempString); 
                         tBox.Text = tradeIn.ToString("C2");
                     }                    
-                    // MessageBox.Show("Tirei o $");
                 }
                 else
                 {
+                    // sets basePrice variable value and corresponding textBox text
                     if (tBox.Name == "BasePriceTextBox")
                     {
                         basePrice = Convert.ToDouble(tBox.Text);
@@ -132,16 +129,17 @@ namespace Assignment2
                         tradeIn = Convert.ToDouble(tBox.Text);
                         tBox.Text = tradeIn.ToString("C2");
                     }                    
-                    // MessageBox.Show("Não precisei tirar o $");
                 }   
                                                  
             }
+            // if convert to double fails (user input contains characters other than numbers (decimal places are allowed), display error message
             catch (Exception)
             {
                 MessageBox.Show("Please, insert a valid number.");
                 tBox.Focus();
                 tBox.SelectAll();
             }
+            // if negative number, display error message
             finally
             {
                 if (tBox.Text.Trim().Substring(0, 1) == "(")
@@ -164,23 +162,33 @@ namespace Assignment2
         {
             return (subTotal * 1.13) - subTotal;
         }
+
+        // display SalesTax
         private void displaySalesTax()
         {
             SalesTaxTextBox.Text = getSalesTax().ToString("C2");
         }
+
+        // return total
         private double getTotal()
         {
             return total;
         }
+
+        // display total
         private void displayTotal()
         {
             total = getSalesTax() + getSubtotal();
             TotalTextBox.Text = total.ToString("C2");
         }
+
+        // return amount due
         private double getAmountDue()
         {
             return total - tradeIn;
         }
+
+        // display amount due
         private void displayAmountDue()
         {
             AmountDueTextBox.Text = getAmountDue().ToString("C2");
@@ -196,8 +204,10 @@ namespace Assignment2
             displayAmountDue();
         }
 
+        // clears form
         private void Clear(object sender, EventArgs e)
         {
+            // reset textboxes
             foreach (Control tBox in TextBoxesPanel.Controls)
             {
                 if (tBox.GetType() == typeof(TextBox))
@@ -221,11 +231,19 @@ namespace Assignment2
             //        cBox.Checked = false;  ***** WHY DOES IT NOT WORK?
             //    }
             //}
+
+            // reset checkboxes
             StereoSystemCheckBox.Checked = false;
             LeatherInteriorCheckBox.Checked = false;
             ComputerNavigationCheckBox.Checked = false;
+
+            // reset defautl radiobutton
             StandardFinishRadioButton.Checked = true;
+
+            // clear additionalItems List
             additionalItems.Clear();
+
+            // reset class variables
             exteriorFinish = 0;
             additionalOptionsTotal = 0;
             basePrice = 0;
@@ -248,12 +266,14 @@ namespace Assignment2
             AmountDueTextBox.Font = new Font("Arial", 18);
         }
 
+        // Changes Color 
         private void Edit_ColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BasePriceTextBox.ForeColor = System.Drawing.ColorTranslator.FromHtml("#03A9F4");
             AmountDueTextBox.ForeColor = System.Drawing.ColorTranslator.FromHtml("#03A9F4");
         }
 
+        // Displays message box with app info
         private void Help_AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string message = "";
