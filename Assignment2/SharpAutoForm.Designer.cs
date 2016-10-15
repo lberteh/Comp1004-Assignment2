@@ -182,6 +182,7 @@
             // AmountDueTextBox
             // 
             this.AmountDueTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AmountDueTextBox.ForeColor = System.Drawing.Color.Black;
             this.AmountDueTextBox.Location = new System.Drawing.Point(5, 359);
             this.AmountDueTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.AmountDueTextBox.Multiline = true;
@@ -205,6 +206,7 @@
             // TotalTextBox
             // 
             this.TotalTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalTextBox.ForeColor = System.Drawing.Color.Black;
             this.TotalTextBox.Location = new System.Drawing.Point(5, 248);
             this.TotalTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.TotalTextBox.Multiline = true;
@@ -216,6 +218,7 @@
             // SalesTaxTextBox
             // 
             this.SalesTaxTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SalesTaxTextBox.ForeColor = System.Drawing.Color.Black;
             this.SalesTaxTextBox.Location = new System.Drawing.Point(5, 192);
             this.SalesTaxTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SalesTaxTextBox.Multiline = true;
@@ -227,6 +230,7 @@
             // SubTotalTextBox
             // 
             this.SubTotalTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubTotalTextBox.ForeColor = System.Drawing.Color.Black;
             this.SubTotalTextBox.Location = new System.Drawing.Point(5, 137);
             this.SubTotalTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SubTotalTextBox.Multiline = true;
@@ -238,6 +242,7 @@
             // AdditionalOptionsTextBox
             // 
             this.AdditionalOptionsTextBox.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdditionalOptionsTextBox.ForeColor = System.Drawing.Color.Black;
             this.AdditionalOptionsTextBox.Location = new System.Drawing.Point(5, 82);
             this.AdditionalOptionsTextBox.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.AdditionalOptionsTextBox.Multiline = true;
@@ -381,7 +386,7 @@
             this.CalculateButton.TabIndex = 4;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
-            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this.Calculate);
             // 
             // ClearButton
             // 
@@ -393,6 +398,7 @@
             this.ClearButton.TabIndex = 5;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.Clear);
             // 
             // ExitButton
             // 
@@ -404,7 +410,7 @@
             this.ExitButton.TabIndex = 6;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
-            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.ExitButton.Click += new System.EventHandler(this.Exit);
             // 
             // menuStrip1
             // 
@@ -434,8 +440,9 @@
             this.File_ExitToolStripMenuItem.Name = "File_ExitToolStripMenuItem";
             this.File_ExitToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+X";
             this.File_ExitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.File_ExitToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.File_ExitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.File_ExitToolStripMenuItem.Text = "&Exit";
+            this.File_ExitToolStripMenuItem.Click += new System.EventHandler(this.Exit);
             // 
             // EditToolStripMenuItem
             // 
@@ -457,6 +464,7 @@
             this.Edit_CalculateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.Edit_CalculateToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.Edit_CalculateToolStripMenuItem.Text = "&Calculate";
+            this.Edit_CalculateToolStripMenuItem.Click += new System.EventHandler(this.Calculate);
             // 
             // Edit_ClearToolStripMenuItem
             // 
@@ -465,6 +473,7 @@
             this.Edit_ClearToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
             this.Edit_ClearToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.Edit_ClearToolStripMenuItem.Text = "&Clear";
+            this.Edit_ClearToolStripMenuItem.Click += new System.EventHandler(this.Clear);
             // 
             // Edit_FontToolStripMenuItem
             // 
@@ -482,6 +491,7 @@
             this.Edit_ColorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.Edit_ColorToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
             this.Edit_ColorToolStripMenuItem.Text = "&Color";
+            this.Edit_ColorToolStripMenuItem.Click += new System.EventHandler(this.Edit_ColorToolStripMenuItem_Click);
             // 
             // HelpToolStripMenuItem
             // 
@@ -498,8 +508,9 @@
             this.Help_AboutToolStripMenuItem.Name = "Help_AboutToolStripMenuItem";
             this.Help_AboutToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+A";
             this.Help_AboutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.Help_AboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.Help_AboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.Help_AboutToolStripMenuItem.Text = "&About";
+            this.Help_AboutToolStripMenuItem.Click += new System.EventHandler(this.Help_AboutToolStripMenuItem_Click);
             // 
             // SharpAutoForm
             // 
@@ -515,9 +526,12 @@
             this.Controls.Add(this.LabelsPanel);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Lucida Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MaximizeBox = false;
             this.Name = "SharpAutoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Auto Center";
             this.LabelsPanel.ResumeLayout(false);
             this.LabelsPanel.PerformLayout();
