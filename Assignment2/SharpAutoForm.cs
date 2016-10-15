@@ -149,9 +149,9 @@ namespace Assignment2
                     tBox.Focus();
                     tBox.SelectAll();
                 }          
-                if (basePrice > 10000000)
+                if (basePrice > 10000000 || tradeIn > 10000000)
                 {
-                    MessageBox.Show("Não trolla");
+                    MessageBox.Show("Value cannot exceed 10000000");
                     tBox.Focus();
                     tBox.SelectAll();
                 }          
